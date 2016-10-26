@@ -1,0 +1,17 @@
+$black: rgba(0, 0, 0, .8);
+$font-family-sans-serif: 'Helvetica Neue', 'Roboto', 'Segoe UI', sans-serif !default;
+#app,
+body,
+html {
+  font-family: $font-family-sans-serif;
+  min-height: 100%;
+}
+a,
+a:focus,
+a:hover,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: $black;
+  text-underline: none;
+}
