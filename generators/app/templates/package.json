@@ -1,9 +1,8 @@
 {
-  "name": "vyee-admin",
+  "name": "<%- name %>",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "douxc",
-  "private": true,
+  "author": "<%- author %>",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",

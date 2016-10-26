@@ -1,7 +1,7 @@
 {
   "name": "generator-vue-router-vuex-webpack",
-  "version": "0.0.2",
-  "description": "a generator for vue project. Init with vuejs、vuerouter、vueresource",
+  "version": "0.0.3",
+  "description": "a generator for vue project. Init with vuejs、vuerouter、vueresource、vuex",
   "homepage": "",
   "author": {
     "name": "douxc",
@@ -47,7 +47,7 @@
       "mocha": true
     }
   },
-  "repository": "git@git.coding.net:douxc/generator-vue-router-webpack.git",
+  "repository": "https://github.com/douxc/generator-vue-router-vuex-webpack.git",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"

@@ -7,13 +7,13 @@ First, install [Yeoman](http://yeoman.io) and generator-vue-router-webpack using
 
 ```bash
 npm install -g yo
-npm install -g generator-vue-router-webpack
+npm install -g generator-vue-router-vuex-webpack
 ```
 
 Then generate your new project:
 
 ```bash
-yo vue-router-webpack
+yo vue-router-vuex-webpack
 ```
 
 ## Getting To Know Yeoman
