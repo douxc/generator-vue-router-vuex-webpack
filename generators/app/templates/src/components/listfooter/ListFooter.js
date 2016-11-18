@@ -2,13 +2,15 @@
  * 列表底部加载更多和无数据显示
  * Created by xinchao.dou on 2016/9/12.
  */
-const style = require('./listfooter.scss'),
-  html = require('./listfooter.html');
-let totalHeight = 0, screenHeight = 0, offset = 10;
+const style = require('./listfooter.scss');
+const html = require('./listfooter.html');
+let totalHeight = 0;
+let screenHeight = 0;
+let offset = 10;
 module.exports = {
   template: '<style>' + style + '</style>' + html,
   props: ['hasmore', 'loadmore'],
-  attached(){
+  created() {
     screenHeight = document.body.offsetHeight;
     window.onscroll = () => {
       totalHeight = document.body.scrollHeight;
@@ -18,9 +20,9 @@ module.exports = {
           this.loadmore();
         }
       }
-    }
+    };
   },
-  destoryed(){
+  destoryed() {
     window.onscroll = () => {};
   }
 };

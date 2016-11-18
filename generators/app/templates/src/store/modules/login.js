@@ -7,12 +7,11 @@ const state = {
   userInfo: {}
 };
 const mutations = {
-  [types.LOGIN](state, userInfo){
-    //成功登录，获取到了用户信息，保存
+  [types.LOGIN](state, userInfo) {
+    // 成功登录，获取到了用户信息，保存
     state.userInfo = userInfo;
   }
 };
-
 export default {
   state, mutations
-}
+};

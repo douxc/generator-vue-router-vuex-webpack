@@ -1,4 +1,4 @@
-# vyee-admin
+# <%- name %>
 
 > A Vue.js project
 

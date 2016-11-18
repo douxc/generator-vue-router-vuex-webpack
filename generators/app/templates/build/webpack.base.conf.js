@@ -2,9 +2,9 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var autoprefixer = require('autoprefixer')
+var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 var projectRoot = path.resolve(__dirname, '../');
 var webpack = require('webpack');
-
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -23,8 +23,6 @@ module.exports = {
       'components': path.resolve(__dirname, '../src/components'),
       'modules': path.resolve(__dirname, '../src/modules'),
       'static': path.resolve(__dirname, '../static/'),
-      'Utils': path.resolve(__dirname, '../src/assets/utils/Utils'),
-      'purecss': path.resolve(__dirname, '../node_modules/purecss/build'),
       'jquery': path.resolve(__dirname, '../node_modules/jquery/dist/jquery')
     }
   },
@@ -33,18 +31,18 @@ module.exports = {
   },
   module: {
     preLoaders: [
-      // {
-      //   test: /\.vue$/,
-      //   loader: 'eslint',
-      //   include: projectRoot,
-      //   exclude: /node_modules/
-      // },
-      // {
-      //   test: /\.js$/,
-      //   loader: 'eslint',
-      //   include: projectRoot,
-      //   exclude: /node_modules/
-      // }
+      {
+        test: /\.vue$/,
+        loader: 'eslint',
+        include: projectRoot,
+        exclude: /node_modules/
+      },
+      {
+        test: /\.js$/,
+        loader: 'eslint',
+        include: projectRoot,
+        exclude: /node_modules/
+      }
     ],
     loaders: [
       {
@@ -70,7 +68,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+          name: utils.assetsPath('img/[name]_[hash:7].[ext]')
         }
       },
       {
@@ -78,7 +76,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+          name: utils.assetsPath('fonts/[name]_[hash:7].[ext]')
         }
       }
     ]
@@ -92,13 +90,14 @@ module.exports = {
     loaders: utils.cssLoaders()
   }
   ,
-  postcss: function () {
-    return [autoprefixer({browserlist: ['not IE <= 8', 'iOS > 8', 'Android > 4.4', '> 5%']})];
+  postcss: function() {
+    return [autoprefixer({ browserlist: ['not IE <= 8', 'iOS > 8', 'Android > 4.4', '> 5%'] })];
   },
   plugins: [
+    new CaseSensitivePathsPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
     })
   ]
-}
+};

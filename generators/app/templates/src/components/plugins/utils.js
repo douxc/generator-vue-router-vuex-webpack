@@ -7,7 +7,7 @@
  * @returns {string}
  */
 export function getUrlParams(name) {
-  var reg = new RegExp("(^|&|\\?)" + name + "=([^&]*)(&|$)", "i");
+  var reg = new RegExp('(^|&|\\?)' + name + '=([^&]*)(&|$)', 'i');
   var param = window.location.href.substring(1).match(reg);
   if (param !== null) {
     return param[2];

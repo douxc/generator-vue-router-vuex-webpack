@@ -3,14 +3,16 @@
  */
 import actions from './actions';
 import modules from './modules';
-export default function (Vuex) {
+import getters from './getters';
+export default function(Vuex) {
   const store = new Vuex.Store({
     actions,
+    getters,
     modules
   });
   // 启用热替换
   if (module.hot) {
-    module.hot.accept(['./actions'], ()=> {
+    module.hot.accept(['./actions'], () => {
       store.hotUpdate({
         actions: require('./actions/login'),
         modules: require('./modules')
