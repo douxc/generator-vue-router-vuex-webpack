@@ -1,5 +1,11 @@
-# generator-vue [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
->
+# generator-vue
+
+ [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
+# upgrade
+
+1. upgrade webpack to 2.x
+2. add [mockjs](https://github.com/nuysoft/Mock)
 
 ## Installation
 

@@ -1,5 +1,5 @@
 /**
- * 自动给vue的请求添加loading框
+ * 仅作组件使用说明
  * Created by xinchao.dou on 2016/10/27.
  */
 const vueAlertEle = document.createElement('div');

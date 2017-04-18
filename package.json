@@ -1,7 +1,7 @@
 {
   "name": "generator-vue-router-vuex-webpack",
-  "version": "0.1.0",
-  "description": "a generator for vue project. Init with vuejs、vuerouter、vueresource、vuex",
+  "version": "0.1.1",
+  "description": "a generator for vue project. Init with vuejs、vuerouter、vueresource、vuex、mockjs",
   "homepage": "",
   "author": {
     "name": "douxc",
