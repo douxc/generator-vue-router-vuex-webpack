@@ -13,12 +13,17 @@ module.exports = yeoman.Base.extend({
     var prompts = [{
       type: 'input',
       name: 'projectname',
-      message: 'project name?',
-      default: 'vueproject'
+      message: 'project name ?',
+      default: 'vue project'
+    },{
+      type: 'input',
+      name: 'desc',
+      message: 'project description ?',
+      default: 'vue project'
     }, {
       type: 'input',
       name: 'author',
-      message: 'author name?',
+      message: 'author name ?',
       default: ''
     }];
 
@@ -31,6 +36,7 @@ module.exports = yeoman.Base.extend({
   writing: function () {
     this.fs.copyTpl(this.templatePath('package.json'), this.destinationPath('package.json'), {
       name: this.props.projectname,
+      desc: this.props.desc,
       author: this.props.author
     });
     this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('README.md'), {
@@ -42,12 +48,15 @@ module.exports = yeoman.Base.extend({
     );
     this.fs.copy(this.templatePath('build/*.js'), this.destinationPath('build/'));
     this.fs.copy(this.templatePath('config/**/*.js'), this.destinationPath('config/'));
+    this.fs.copy(this.templatePath('mockjs/**/*.js'), this.destinationPath('mockjs/'));
     this.fs.copy(this.templatePath('src/**/*.*'), this.destinationPath('src/'));
     this.fs.copy(this.templatePath('static/**/*.*'), this.destinationPath('static/'));
     this.fs.copy(this.templatePath('.babelrc'), this.destinationPath('.babelrc'));
     this.fs.copy(this.templatePath('.editorconfig'), this.destinationPath('.editorconfig'));
     this.fs.copy(this.templatePath('.eslintignore'), this.destinationPath('.eslintignore'));
     this.fs.copy(this.templatePath('.eslintrc.js'), this.destinationPath('.eslintrc.js'));
+    this.fs.copy(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
+    this.fs.copy(this.templatePath('.postcssrc.js'), this.destinationPath('.postcssrc.js'));
   },
 
   install: function () {

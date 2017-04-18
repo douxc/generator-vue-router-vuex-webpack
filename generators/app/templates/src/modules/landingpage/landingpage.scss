@@ -1,6 +1,16 @@
-@import '../../styles/variables.scss';
+.landing-container {
+  padding-top: 10%;
+  .landing-icon {
+    margin-right: 1rem;
+    animation: infinite-rotate 1.5s linear infinite;
+  }
 
-h4
-{
-    color: $black;
+  @keyframes infinite-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }

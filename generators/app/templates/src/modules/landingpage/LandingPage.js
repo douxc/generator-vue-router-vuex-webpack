@@ -1,29 +1,34 @@
 /**
- * 中间页
+ * 中间页，可以做判断是跳转详情还是登录
  * Created by xinchao.dou on 2016/9/5.
  */
 import './landingpage.scss';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 module.exports = {
+  render: function (h) {
+    return (
+      <section class="container">
+        <div class="landing-container text-center">
+          <i class="landing-icon glyphicon glyphicon-refresh"/>&nbsp;{this.text}
+        </div>
+      </section>);
+  },
   computed: {
-    ...mapGetters(['userInfo'])
+    ...mapGetters({
+      text: 'loading'
+    })
   },
-  render: function(h) {
-    return (<div>
-      <span class="landingpage">132</span>
-      <h4>{this.title}</h4>
-    </div>);
-  },
-  data() {
-    return {
-      title: 'this is landing page'
-    };
+  methods: {
+    ...mapActions({
+      changeLoadingText: 'setLoadingText'
+    })
   },
   created() {
-    setTimeout(() => {
-      this.$store.dispatch('login', { id: '1234567' }).then(() => {
-        console.log('landingpage获取登录信息', this.userInfo);
-      });// 发起请求，获取数据
-    }, 1000);
+    const _this = this;
+    console.log(_this);
+    // 页面加载之后，开始模拟请求更改文字
+    _this.changeLoadingText().then(() => {
+      _this.VueAlert.show('text changed');
+    });
   }
 };

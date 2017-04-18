@@ -1,6 +1,4 @@
 build/*.js
 config/*.js
-src/assets/plugins/**/*.js
-src/modules/campaign/**/*.*
-src/modules/questionnaire/**/*.*
-static/**/*.*
+static/**/*.js
+src/vendor/**/*.js

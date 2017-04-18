@@ -6,9 +6,7 @@ export default {
   routes: [{
     // 跳转中间页
     path: '/',
-    component: (resolve) => {
-      require(['./modules/landingpage/LandingPage'], resolve);
-    }
+    component: resolve => require(['./modules/landingpage/LandingPage'], resolve)
   }, {
     path: '*',
     redirect: '/'
