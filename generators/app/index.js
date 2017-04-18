@@ -14,12 +14,12 @@ module.exports = yeoman.Base.extend({
       type: 'input',
       name: 'projectname',
       message: 'project name ?',
-      default: 'vue project'
-    },{
+      default: ''
+    }, {
       type: 'input',
       name: 'desc',
       message: 'project description ?',
-      default: 'vue project'
+      default: ''
     }, {
       type: 'input',
       name: 'author',
@@ -40,7 +40,8 @@ module.exports = yeoman.Base.extend({
       author: this.props.author
     });
     this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('README.md'), {
-      name: this.props.projectname
+      name: this.props.projectname,
+      desc: this.props.desc
     });
     this.fs.copy(
       this.templatePath('index.html'),
@@ -55,7 +56,6 @@ module.exports = yeoman.Base.extend({
     this.fs.copy(this.templatePath('.editorconfig'), this.destinationPath('.editorconfig'));
     this.fs.copy(this.templatePath('.eslintignore'), this.destinationPath('.eslintignore'));
     this.fs.copy(this.templatePath('.eslintrc.js'), this.destinationPath('.eslintrc.js'));
-    this.fs.copy(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
     this.fs.copy(this.templatePath('.postcssrc.js'), this.destinationPath('.postcssrc.js'));
   },
 
